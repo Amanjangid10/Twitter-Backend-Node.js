@@ -1,42 +1,43 @@
-const Tweets = require("../model/tweets");
+const Tweet = require("../model/tweets");
+const CrudRepository = require("./crudRepository");
 
-class TweetRepository {
+class TweetRepository extends CrudRepository {
+  constructor() {
+    super(Tweet);
+  }
 
-    async create(data) {
-        try {
-            const user = await Tweets.create(data);
-            return user;
-        } catch (error) {
-            console.log(error);
-        }
+  async create(data) {
+    try {
+      const user = await Tweet.create(data);
+      return user;
+    } catch (error) {
+      console.log(error);
     }
-
-    async get(id) {
-
-        try {
-            const user = await Tweets.findById(id)
-        } catch (error) {
-            console.log(error)
-        }
+  }
+  async getTweet(id) {
+    try {
+      const response = await Tweet.findById(id);
+      return response;
+    } catch (error) {
+      console.log("something went wrong in crud repo");
+      throw error;
     }
+  }
 
-    async getWithComments() {
-        try {
-            
-        } catch (error) {
-            
-        }
-    }
+  async getWithComments() {
+    try {
+    } catch (error) {}
+  }
 
-    async getAll(offset, limit) {
-        try {
-            const response = await Tweets.find().skip(offset).limit(limit);
-            return response;
-        } catch (error) {
-            console.log(error)
-            throw error
-        }
+  async getAll(offset, limit) {
+    try {
+      const response = await Tweet.find().skip(offset).limit(limit);
+      return response;
+    } catch (error) {
+      console.log(error);
+      throw error;
     }
+  }
 }
-    
+
 module.exports = TweetRepository;

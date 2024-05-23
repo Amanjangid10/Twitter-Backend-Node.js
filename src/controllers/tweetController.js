@@ -12,7 +12,6 @@ const createTweet = async (req, res) => {
       err: {},
     });
   } catch (error) {
-    console.log(error);
     return res.status(400).json({
       success: false,
       message: "not able to create a tweet ",

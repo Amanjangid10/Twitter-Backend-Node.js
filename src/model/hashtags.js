@@ -10,7 +10,7 @@ const hashtagSchema = new mongoose.Schema(
     tweets: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Tweets",
+        ref: "Tweet",
       },
     ],
   },

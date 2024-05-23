@@ -10,18 +10,12 @@ const tweetSchema = new mongoose.Schema(
     like: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "likes",
-      },
-    ],
-    comment: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "comments",
+        ref: "like",
       },
     ],
   },
   { timestamps: true }
 );
 
-const Tweets = mongoose.model("Tweets", tweetSchema);
-module.exports = Tweets;
+const Tweet = mongoose.model("Tweets", tweetSchema);
+module.exports = Tweet;
