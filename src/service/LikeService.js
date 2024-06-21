@@ -20,7 +20,7 @@ class LikeService {
     } else if (ModelType == "Comment") {
       //ToDo
     } else {
-      throw new Error("something went wrong");
+      throw new Error("something went wrokmng");
     }
 
     console.log("beyond");

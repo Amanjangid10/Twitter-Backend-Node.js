@@ -13,6 +13,12 @@ const tweetSchema = new mongoose.Schema(
         ref: "like",
       },
     ],
+    comment: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment",
+      },
+    ],
   },
   { timestamps: true }
 );

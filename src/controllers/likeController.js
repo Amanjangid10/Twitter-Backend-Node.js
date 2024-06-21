@@ -17,7 +17,6 @@ const toggleLike = async (req, res) => {
       err: {},
     });
   } catch (error) {
-    console.log(error);
     return res.status(400).json({
       data: {},
       message: "Someting went wrong during toggling like",
